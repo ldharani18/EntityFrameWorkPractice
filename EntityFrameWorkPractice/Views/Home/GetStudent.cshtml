@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "GetStudent";
+}
+<h1 style="color:white">Student Details</h1>
+<table class="table table-bordered table-hover table-responsive">
+    <tr>
+        <th>Student_ID</th>
+        <th>First_Name</th>
+        <th>Last_Name</th>
+        <th>Age : (Major/Minor)</th>
+        <th>City</th>
+        <th>Marks</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var student in ViewBag.Student)
+    {
+        <tr>
+            <td>@student.StudentID</td>
+            <td>@student.FirstName</td>
+            <td>@student.LastName</td>
+            <td>
+                @if (student.Age >= 18)
+                {
+                    <p>Major</p>
+                }
+                else
+                {
+                    <p>Minor</p>
+                }
+            </td>
+            <td>@student.City</td>
+            <td>@student.Marks</td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm" style="background-color:darkcyan">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm" style="background-color:red">Delete</button>
+            </td>
+        </tr>
+    }
+
+
+</table>

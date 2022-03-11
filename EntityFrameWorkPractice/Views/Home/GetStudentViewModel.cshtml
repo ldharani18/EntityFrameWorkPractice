@@ -1,0 +1,37 @@
+﻿@model EntityFrameWorkPractice.View_Models.StudentViewModel
+@{
+    ViewBag.Title = "GetStudentViewModel";
+}
+
+<h1 style="color:white">Student Details along with Subjects</h1>
+<table>
+    <tr>
+        <th>Student Entities</th>
+        <th>StudentID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Marks</th>
+        <th style="width:15%">Subjects</th>
+    </tr>
+    <tr>
+        <td>Student Values</td>
+        <td>@Model.Student.StudentID</td>
+        <td>@Model.Student.FirstName</td>
+        <td>@Model.Student.LastName</td>
+        <td>@Model.Student.Age</td>
+        <td>@Model.Student.City</td>
+        <td>@Model.Student.Marks</td>
+        <td>
+            <ul>
+                @foreach (var item in Model.Subjects)
+                {
+                    <li>@item.Name </li>
+                }
+            </ul>
+
+        </td>
+
+    </tr>
+</table>

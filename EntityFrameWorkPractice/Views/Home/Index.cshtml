@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 style="color:white">Sample View</h1>
+
+<p>First Name: @ViewBag.FirstName</p>
+<p>Last Name: @ViewBag.LastName</p>
+<p>Address: @ViewBag.Address</p>
+
+@{
+    int firstnumber = 50;
+    int secondnumber = 80;
+    int sum = firstnumber + secondnumber;
+    <p>The sum of firstnumber and secondnumber is @sum</p>
+}
+@{
+    for (int i = 1; i <= 10; i++)
+    {
+        <p>2 * @i = @(2*i) </p>
+    }
+}
+@if(firstnumber>secondnumber)
+{
+    <p>Firstnumber is greater than secondnumber</p>
+}
+else
+{
+    <p>Secondnumber is greater than firstnumber</p>
+}
